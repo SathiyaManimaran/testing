@@ -14,14 +14,10 @@ This guide will help you set up Kubernetes for deploying your Angular + Spring B
 Your kubeconfig is automatically configured at: `~/.kube/config`
 
 ### Minikube (Alternative)
-```bash
-# Install Minikube: https://minikube.sigs.k8s.io/docs/start/
-
-# Start Minikube
-minikube start
-
-# Minikube kubeconfig is automatically configured
-```
+See [MINIKUBE_SETUP.md](MINIKUBE_SETUP.md) for detailed instructions on setting up Minikube with:
+- Docker Desktop Kubernetes integration
+- Hyper-V (Windows Pro/Enterprise)
+- VirtualBox
 
 ## Option 2: Cloud Kubernetes
 

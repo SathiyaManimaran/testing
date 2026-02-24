@@ -164,7 +164,8 @@ mvn clean package
 
 ## Documentation
 
-- [Kubernetes Setup Guide](KUBERNETES_SETUP.md)
+- [Minikube Setup Guide](MINIKUBE_SETUP.md) - Quick start Kubernetes locally
+- [Kubernetes Setup Guide](KUBERNETES_SETUP.md) - Comprehensive Kubernetes setup (Docker Desktop, cloud options)
 - [Frontend README](frontend/README.md)
 - [Angular Documentation](https://angular.io)
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
