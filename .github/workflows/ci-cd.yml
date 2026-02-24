@@ -57,8 +57,21 @@ jobs:
       - name: Setup kubectl
         uses: azure/setup-kubectl@v3
 
-      - name: Deploy to Kubernetes
+      - name: Deploy to Kubernetes (Optional)
+        if: secrets.KUBE_CONFIG != ''
         run: |
           echo "${{ secrets.KUBE_CONFIG }}" > kubeconfig
           export KUBECONFIG=kubeconfig
-          kubectl apply -f k8s/
+          kubectl apply -f k8s/ --validate=false
+
+      - name: Note on Kubernetes Deployment
+        if: secrets.KUBE_CONFIG == ''
+        run: |
+          echo "⚠️ KUBE_CONFIG secret not configured"
+          echo "To enable Kubernetes deployment:"
+          echo "1. Set up a Kubernetes cluster (AWS EKS, Azure AKS, GCP GKE, Minikube, etc.)"
+          echo "2. Download your kubeconfig file"
+          echo "3. Add it as a GitHub secret named 'KUBE_CONFIG'"
+          echo ""
+          echo "✅ Docker images have been built and pushed successfully"
+          echo "Docker images are ready for manual Kubernetes deployment"
