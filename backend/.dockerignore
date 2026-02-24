@@ -1,0 +1,8 @@
+*.log
+.git
+.gitignore
+.DS_Store
+.env
+.vscode
+src/test
+pom.xml.bak
