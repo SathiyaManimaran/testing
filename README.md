@@ -48,6 +48,19 @@ mvn spring-boot:run
 # Runs on http://localhost:8080
 ```
 
+### Docker Testing (Easiest)
+```bash
+# Build backend JAR first
+cd backend && mvn clean package && cd ..
+
+# Start both services with Docker Compose
+docker-compose up --build
+
+# Open browser: http://localhost
+```
+
+See [Docker Testing Guide](DOCKER_TESTING.md) for detailed instructions.
+
 ## Architecture
 
 ### Frontend (Angular 21)
@@ -164,6 +177,7 @@ mvn clean package
 
 ## Documentation
 
+- [Docker Testing Guide](DOCKER_TESTING.md) - Test locally with Docker Desktop (easiest!)
 - [Minikube Setup Guide](MINIKUBE_SETUP.md) - Quick start Kubernetes locally
 - [Kubernetes Setup Guide](KUBERNETES_SETUP.md) - Comprehensive Kubernetes setup (Docker Desktop, cloud options)
 - [Frontend README](frontend/README.md)
