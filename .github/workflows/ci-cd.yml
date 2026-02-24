@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '21'
+          node-version: '20'
 
       - name: Build Backend
         run: |
@@ -31,6 +31,7 @@ jobs:
         run: |
           cd frontend
           npm install
+          npm audit fix --audit-level=moderate || true
           npm run build
 
       - name: Docker Login
